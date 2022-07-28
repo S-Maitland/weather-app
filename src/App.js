@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/header/Header.js';
-import axios from 'axios';
 import Homepage from './components/homepage/Homepage';
 
 function App() {
