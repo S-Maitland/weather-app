@@ -1,0 +1,20 @@
+@use '../../GlobalStyle.scss';
+
+.cardContainer{
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+
+li{
+    list-style: none;
+}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+}
