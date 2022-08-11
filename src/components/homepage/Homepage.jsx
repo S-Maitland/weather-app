@@ -4,8 +4,8 @@ import "./Homepage.scss";
 import { CitiesForm } from './CitiesForm';
 import WeatherCard from '../card/WeatherCard';
 
-const Homepage = () => {
 
+const Homepage = () => {
   // const [error, setError] = useState(null);
   // const [isLoaded, setIsLoaded] = useState(false);
   const [weatherNow, setWeatherNow] = useState();

@@ -1,17 +1,22 @@
-import React from 'react'
+import { useState } from 'react'
+import cities from '../../cities.json'
+
+const cityData = cities.cities.sort();
 
 export const CitiesForm = ({setCity}) => {
+
+  const citiesList = cityData.map((city,index) => {
+    return (
+      <option key={index} value={city}>{city}</option>
+    )
+  })
+
   return (
     <>
       <form>
-        <select onChange={(e) => { setCity(e.target.value) }}>
-          <option value="" disabled>Select A Value..</option>
-          <option value="aberdeen">Aberdeen</option>
-          <option value="dundee">Dundee</option>
-          <option value="edinburgh">Edinburgh</option>
-          <option value="glasgow">Glasgow</option>
-          <option value="inverness">Inverness</option>
-          <option value="perth">Perth</option>
+        <select defaultValue='DEFAULT' onChange={(e) => { setCity(e.target.value) }}>
+          <option value="DEFAULT" disabled>Select A Value..</option>
+          {citiesList}
         </select>
       </form>
     </>
