@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import cities from '../../cities.json'
 
 const cityData = cities.cities.sort();
