@@ -16,8 +16,7 @@ const Homepage = () => {
     .then(response => {
       console.log(response.data)
       setWeatherNow(response.data)
-    }
-    )
+    })
   }, [city])
   return (
     <>
