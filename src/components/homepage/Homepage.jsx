@@ -14,10 +14,10 @@ const Homepage = () => {
   useEffect(() => {
     getWeather(process.env.REACT_APP_OPEN_WEATHER_URL, city)
     .then(response => {
-      console.log(response.data)
       setWeatherNow(response.data)
     })
   }, [city])
+
   return (
     <>
       <div>

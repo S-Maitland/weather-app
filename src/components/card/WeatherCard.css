@@ -1,0 +1,33 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+p {
+  color: #D3D3D3;
+}
+
+body {
+  background-color: #1F2937;
+}
+
+.cardContainer {
+  align-items: center;
+  box-shadow: 0.25rem 0.25rem 0.25rem 0.25rem #191D24;
+  background-color: #2A303C;
+  color: #D3D3D3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+}/*# sourceMappingURL=WeatherCard.css.map */

@@ -1,17 +1,35 @@
 import './WeatherCard.scss';
 
-const WeatherCard=({weather})=>{
+const WeatherCard = ({ weather }) => {
 
     return (
         <div className="cardContainer">
-            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}/>
-            <ul>
-                <li>DESCRIPTION: {weather.weather[0].description}</li>
-                <li>TEMP:{ weather.main.temp}</li>
-                <li>FEELS LIKE: {weather.main.feels_like}</li>
-                <li>HUMIDITY: {weather.main.humidity}</li>
-                <li>PRESSURE: {weather.main.pressure}</li>
-            </ul>
+            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+
+            <table className="weatherInfoTable">
+                <tbody>
+                    <tr>
+                        <td className="tableLabel">Description</td>
+                        <td className="tableValue">{weather.weather[0].description}</td>
+                    </tr>
+                    <tr>
+                        <td className="tableLabel">Temp</td>
+                        <td className="tableValue">{weather.main.temp}</td>
+                    </tr>
+                    <tr>
+                        <td className="tableLabel">Feels Like</td>
+                        <td className="tableValue">{weather.main.feels_like}</td>
+                    </tr>
+                    <tr>
+                        <td className="tableLabel">Humidity</td>
+                        <td className="tableValue">{weather.main.humidity}</td>
+                    </tr>
+                    <tr>
+                        <td className="tableLabel">Pressure</td>
+                        <td className="tableValue">{weather.main.pressure}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 

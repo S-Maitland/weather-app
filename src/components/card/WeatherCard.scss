@@ -1,20 +1,39 @@
 @use '../../GlobalStyle.scss';
 
-.cardContainer{
-    display:flex;
-    justify-content:center;
-    flex-direction: column;
-
+.cardContainer {
     align-items: center;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0.25rem #191D24;
+    background-color: #2A303C;
+    color: #D3D3D3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 25rem;
 }
 
+.weatherInfoContainer {
+    column-rule-width: 2px;
+    column-rule-color: #D3D3D3;
+    column-rule-style: double;
+}
 
+.tableLabel {
+    padding-right: 1rem;
+    float: left;
+}
 
-li{
+.tableValue {
+    padding-left: 1rem;
+    text-align: center;
+}
+
+li {
     list-style: none;
+    padding: 0.1rem;
 }
 
-img{
+img {
     margin-left: auto;
     margin-right: auto;
 }
