@@ -20,9 +20,6 @@ const Homepage = () => {
 
   return (
     <>
-      <div>
-        This is the home page
-      </div>
       <CitiesForm setCity={setCity} />
       {weatherNow ? <WeatherCard weather={weatherNow} /> : null}
     </>

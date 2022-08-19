@@ -7,10 +7,10 @@ function App() {
   return (
     <div>
       <h1>
-        Text
+        NAVBAR TO GO HERE
       </h1>
-      <Homepage/>
       <Header/>
+      <Homepage/>
     </div>
   );
 }

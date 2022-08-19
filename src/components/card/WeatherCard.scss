@@ -13,24 +13,24 @@
 }
 
 .weatherInfoContainer {
-    column-rule-width: 2px;
-    column-rule-color: #D3D3D3;
-    column-rule-style: double;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
 }
 
-.tableLabel {
-    padding-right: 1rem;
-    float: left;
+.dataRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.4rem;
+    width: 100%;
+    & p {
+        margin: 0;
+    }
 }
 
-.tableValue {
-    padding-left: 1rem;
-    text-align: center;
-}
-
-li {
-    list-style: none;
-    padding: 0.1rem;
+.dataValue {
+    padding-left: 4rem;
 }
 
 img {
