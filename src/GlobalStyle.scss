@@ -1,0 +1,17 @@
+$font-stack: Helvetica, sans-serif;
+$text-color: #D3D3D3;
+
+
+body {
+  font: 100% $font-stack;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2, p {
+  color: $text-color;
+}
+
+body{
+  background-color: #1F2937;
+}

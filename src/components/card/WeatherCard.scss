@@ -1,0 +1,39 @@
+@use '../../GlobalStyle.scss';
+
+.cardContainer {
+    align-items: center;
+    box-shadow: 0.25rem 0.25rem 0.25rem 0.25rem #191D24;
+    background-color: #2A303C;
+    color: #D3D3D3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.weatherInfoContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+}
+
+.dataRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.4rem;
+    width: 100%;
+    & p {
+        margin: 0;
+    }
+}
+
+.dataValue {
+    padding-left: 4rem;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+}
