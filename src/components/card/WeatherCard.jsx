@@ -4,17 +4,10 @@ const WeatherCard = ({ weather }) => {
 
     return (
         <div className="cardContainer">
-            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weatherIcon" />
+            {weather.weather[0].description}
 
             <div className="weatherInfoContainer">
-                <div className="dataRow">
-                    <div className="dataLabel">
-                        <p>Description</p>
-                    </div>
-                    <div className='dataValue'>
-                        <p>{weather.weather[0].description}</p>
-                    </div>
-                </div>
                 <div className="dataRow">
                     <div className="dataLabel">
                         <p>Temp</p>

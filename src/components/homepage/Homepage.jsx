@@ -11,11 +11,17 @@ const Homepage = () => {
   const [city, setCity] = useState("London");
   // const [weatherImage, setWeatherImage] = useState("")
 
+  async function fetchData() {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => console.log(json))
+  }
+
   useEffect(() => {
     getWeather(process.env.REACT_APP_OPEN_WEATHER_URL, city)
-    .then(response => {
-      setWeatherNow(response.data)
-    })
+      .then(response => {
+        setWeatherNow(response.data)
+      })
   }, [city])
 
   return (
