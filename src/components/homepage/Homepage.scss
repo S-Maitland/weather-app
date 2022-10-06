@@ -1,1 +1,9 @@
 @use '../../GlobalStyle.scss';
+
+.cardWrap{
+    width:100%;
+    border:1px solid green;
+    display: inline-block;
+    margin-top: 2rem;
+
+}

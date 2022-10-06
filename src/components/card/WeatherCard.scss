@@ -8,14 +8,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 2rem;
-    width: 100%;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    .iconWrap{     
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
 }
 
 .weatherInfoContainer {
     display: flex;
     flex-direction: column;
-    margin: 1rem auto;
+    // margin: 1rem auto;
+   
 }
 
 .dataRow {
@@ -36,4 +44,17 @@
 img {
     margin-left: auto;
     margin-right: auto;
+
+}
+
+
+@media (min-width: 700px){
+    .cardContainer {
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 80rem;
+        .iconWrap{
+            margin-bottom: 0;
+        }
+    }
 }

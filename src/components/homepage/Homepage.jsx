@@ -27,7 +27,9 @@ const Homepage = () => {
   return (
     <>
       <CitiesForm setCity={setCity} />
+      <div className="cardWrap">
       {weatherNow ? <WeatherCard weather={weatherNow} /> : null}
+      </div>
     </>
   )
 
