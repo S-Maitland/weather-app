@@ -1,21 +1,29 @@
-@use '../../GlobalStyle.scss';
+@import '../../GlobalStyle.scss';
 
 .cardContainer {
     align-items: center;
-    box-shadow: 0.25rem 0.25rem 0.25rem 0.25rem #191D24;
-    background-color: #2A303C;
-    color: #D3D3D3;
+    box-shadow: 0.5rem 2rem 2.5rem #191D24;
+    background-color: $site-secondary-color;
+    border-radius: 2.5rem;
+    color: $site-secondary-text-color;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
     margin-left: auto;
     margin-right: auto;
-    .iconWrap{     
-        display:flex;
+    max-width: 75%;
+
+    .iconWrap {
+        display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 1rem;
+
+        img {
+            animation: slidein;
+            animation-duration: 3s;
+        }
     }
 }
 
@@ -23,7 +31,7 @@
     display: flex;
     flex-direction: column;
     // margin: 1rem auto;
-   
+
 }
 
 .dataRow {
@@ -32,7 +40,9 @@
     justify-content: space-between;
     padding: 0.4rem;
     width: 100%;
+
     & p {
+        color: black;
         margin: 0;
     }
 }
@@ -44,17 +54,37 @@
 img {
     margin-left: auto;
     margin-right: auto;
-
+    overflow: hidden;
 }
 
 
-@media (min-width: 700px){
+@media (min-width: 700px) {
     .cardContainer {
+        box-shadow: 1rem 1rem 1.5rem #191D24;
+        border-radius: 5rem;
         flex-direction: row;
         justify-content: space-around;
-        max-width: 80rem;
-        .iconWrap{
+        max-width: 75%;
+
+        .iconWrap {
             margin-bottom: 0;
         }
+    }
+}
+
+@keyframes slidein {
+    0%{
+        opacity: 0%;
+        transform: translatey(-100%);
+    }
+
+    50% {
+        opacity: 0%;
+        transform: translatey(-50%);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translatey(0%);
     }
 }

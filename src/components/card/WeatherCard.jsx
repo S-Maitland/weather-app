@@ -5,8 +5,8 @@ const WeatherCard = ({ weather }) => {
     return (
         <div className="cardContainer">
             <div className="iconWrap">
-            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weatherIcon" />
-            {weather.weather[0].description}
+                <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weatherIcon" />
+                {weather.weather[0].description}
             </div>
 
             <div className="weatherInfoContainer">
@@ -43,11 +43,11 @@ const WeatherCard = ({ weather }) => {
                     </div>
                 </div>
 
-                
 
-                
 
-                
+
+
+
 
                 {/* <div>Temp:{weather.main.temp}</div>
                 <div>Feels Like: {weather.main.feels_like}</div>
@@ -89,11 +89,11 @@ const WeatherCard = ({ weather }) => {
                     </div>
                 </div>
 
-                
 
-                
 
-                
+
+
+
 
                 {/* <div>Temp:{weather.main.temp}</div>
                 <div>Feels Like: {weather.main.feels_like}</div>
