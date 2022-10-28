@@ -14,7 +14,7 @@ export const CitiesForm = ({setCity}) => {
     <>
       <form>
         <select defaultValue='DEFAULT' onChange={(e) => { setCity(e.target.value) }}>
-          <option value="DEFAULT" disabled>Select A Value..</option>
+          <option value="DEFAULT" disabled>Select A City...</option>
           {citiesList}
         </select>
       </form>
