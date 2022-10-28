@@ -10,6 +10,9 @@
 .citySelector {
     justify-content: center;
     display:flex;
+    & input, select, textarea {
+        font-size:125%;
+    }
 }
 
 .header{

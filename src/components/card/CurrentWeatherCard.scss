@@ -19,6 +19,7 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 1rem;
+        font-weight: bolder;
 
         img {
             animation: slidein;
@@ -28,6 +29,7 @@
 }
 
 .weatherInfoContainer {
+    font-weight: bolder;
     display: flex;
     flex-direction: column;
     // margin: 1rem auto;
