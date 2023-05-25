@@ -2,8 +2,20 @@
 
 .cardWrap{
     width:100%;
-    border:1px solid green;
     display: inline-block;
     margin-top: 2rem;
 
+}
+
+.citySelector {
+    justify-content: center;
+    display:flex;
+    & input, select, textarea {
+        font-size:125%;
+    }
+}
+
+.header{
+    justify-content: center;
+    display:flex; 
 }

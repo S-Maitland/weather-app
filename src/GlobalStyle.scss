@@ -1,5 +1,9 @@
 $font-stack: Helvetica, sans-serif;
-$text-color: #D3D3D3;
+$site-main-text-color: #D3D3D3;
+$site-secondary-text-color: black;
+$site-main-color: #2b6777;
+$site-secondary-color: #c8d8e4;
+$site-button-color: #52ab98;
 
 
 body {
@@ -9,9 +13,9 @@ body {
 }
 
 h1, h2, p {
-  color: $text-color;
+  color: $site-main-text-color;
 }
 
 body{
-  background-color: #1F2937;
+  background-color: $site-main-color;
 }
