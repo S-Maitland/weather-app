@@ -1,11 +1,11 @@
-@import '../../GlobalStyle.scss';
+@use '../abstract/colors' as colors;
 
 .cardContainer {
     align-items: center;
     box-shadow: 0.5rem 2rem 2.5rem #191D24;
-    background-color: $site-secondary-color;
+    background-color: colors.$site-secondary-color;
     border-radius: 2.5rem;
-    color: $site-secondary-text-color;
+    color: colors.$site-secondary-text-color;
     display: flex;
     flex-direction: column;
     justify-content: center;

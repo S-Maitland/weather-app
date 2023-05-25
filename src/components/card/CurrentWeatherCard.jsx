@@ -1,4 +1,4 @@
-import './CurrentWeatherCard.scss';
+import '../../sass/components/CurrentWeatherCard.scss';
 
 const CurrentWeatherCard = ({ weather }) => {
 
