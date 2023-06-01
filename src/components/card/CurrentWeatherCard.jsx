@@ -1,4 +1,4 @@
-import './CurrentWeatherCard.scss';
+import '../../scss/components/_currentWeatherCard.scss';
 
 const CurrentWeatherCard = ({ weather }) => {
 
