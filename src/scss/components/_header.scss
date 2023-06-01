@@ -1,0 +1,5 @@
+@use '../abstract/colors' as colors;
+
+h1 {
+    color : colors.$site-main-text-color;
+}

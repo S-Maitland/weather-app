@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Homepage.scss";
+import "../../scss/pages/_homepage.scss";
 import { CitiesForm } from './CitiesForm';
 import CurrentWeatherCard from '../card/CurrentWeatherCard';
 import ForecastWeatherCard from '../card/ForecastWeatherCard';
@@ -38,6 +38,5 @@ const Homepage = () => {
       </div>
     </>
   )
-
 }
 export default Homepage;

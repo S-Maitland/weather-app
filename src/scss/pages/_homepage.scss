@@ -1,6 +1,9 @@
-@use '../../GlobalStyle.scss';
+@use '../abstract/colors' as colors;
 
-.cardWrap{
+body {
+    background-color: colors.$site-background-color;
+}
+.cardWrap {
     width:100%;
     display: inline-block;
     margin-top: 2rem;
@@ -15,7 +18,7 @@
     }
 }
 
-.header{
+.header {
     justify-content: center;
     display:flex; 
 }
