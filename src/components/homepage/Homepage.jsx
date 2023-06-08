@@ -6,13 +6,9 @@ import ForecastWeatherCard from '../card/ForecastWeatherCard';
 import { getWeather, getWeatherForecast } from '../API/GetWeather'
 
 const Homepage = () => {
-  // const [error, setError] = useState(null);
-  // const [isLoaded, setIsLoaded] = useState(false);
   const [weatherNow, setWeatherNow] = useState();
   const [weatherForecast, setWeatherForecast] = useState();
   const [city, setCity] = useState("London");
-  // const [weatherImage, setWeatherImage] = useState("")
-
 
   useEffect(() => {
     getWeather(process.env.REACT_APP_OPEN_WEATHER_URL, city)
