@@ -1,13 +1,13 @@
 import '../../scss/components/_forecastWeatherCard.scss';
 
-const ForecastWeatherCard = ({ weather }) => {
+const ForecastWeatherCard = ({ forecastWeather }) => {
 
-    return (
-        <div className="cardContainer">
-            
-        </div>
-    )
+  return (
+    <div className='cardContainer'>
 
-}
+    </div>
+  );
 
-export default ForecastWeatherCard
+};
+
+export default ForecastWeatherCard;
