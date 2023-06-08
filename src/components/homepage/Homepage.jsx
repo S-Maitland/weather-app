@@ -31,10 +31,10 @@ const Homepage = () => {
       <CitiesForm setCity={setCity} />
       </div>
       <div className="cardWrap">
-      {weatherNow ? <CurrentWeatherCard weather={weatherNow} /> : null}
+      {weatherNow ? <CurrentWeatherCard currentWeather={weatherNow} /> : null}
       </div>
       <div className="cardWrap">
-      {weatherForecast ? <ForecastWeatherCard weather={weatherForecast} /> : null}
+      {weatherForecast ? <ForecastWeatherCard weatherForecast={weatherForecast} /> : null}
       </div>
     </>
   )

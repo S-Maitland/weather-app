@@ -1,12 +1,12 @@
 import '../../scss/components/_currentWeatherCard.scss';
 
-const CurrentWeatherCard = ({ weather }) => {
+const CurrentWeatherCard = ({ currentWeather }) => {
 
     return (
         <div className="cardContainer">
             <div className="iconWrap">
-                <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt="weatherIcon" />
-                {weather.weather[0].description}
+                <img src={`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`} alt="weatherIcon" />
+                {currentWeather.weather[0].description}
             </div>
 
             <div className="weatherInfoContainer">
@@ -15,7 +15,7 @@ const CurrentWeatherCard = ({ weather }) => {
                         <p>Temp</p>
                     </div>
                     <div className='dataValue'>
-                        <p>{`${weather.main.temp}\u00b0C`}</p>
+                        <p>{`${currentWeather.main.temp}\u00b0C`}</p>
                     </div>
                 </div>
                 <div className="dataRow">
@@ -23,7 +23,7 @@ const CurrentWeatherCard = ({ weather }) => {
                         <p>Feels Like</p>
                     </div>
                     <div className='dataValue'>
-                        <p>{`${weather.main.feels_like}\u00b0C`}</p>
+                        <p>{`${currentWeather.main.feels_like}\u00b0C`}</p>
                     </div>
                 </div>
                 <div className="dataRow">
@@ -31,7 +31,7 @@ const CurrentWeatherCard = ({ weather }) => {
                         <p>Pressure</p>
                     </div>
                     <div className='dataValue'>
-                        <p>{`${weather.main.pressure}hPa`}</p>
+                        <p>{`${currentWeather.main.pressure}hPa`}</p>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@ const CurrentWeatherCard = ({ weather }) => {
                         <p>Latitude</p>
                     </div>
                     <div className='dataValue'>
-                        <p>{`${weather.coord.lat}`}</p>
+                        <p>{`${currentWeather.coord.lat}`}</p>
                     </div>
                 </div>
                 <div className="dataRow">
@@ -50,7 +50,7 @@ const CurrentWeatherCard = ({ weather }) => {
                         <p>Longitude</p>
                     </div>
                     <div className='dataValue'>
-                        <p>{`${weather.coord.lon}`}</p>
+                        <p>{`${currentWeather.coord.lon}`}</p>
                     </div>
                 </div>
                 <div className="dataRow">
@@ -58,7 +58,7 @@ const CurrentWeatherCard = ({ weather }) => {
                         <p>Humidity</p>
                     </div>
                     <div className='dataValue'>
-                        <p>{`${weather.main.humidity}%`}</p>
+                        <p>{`${currentWeather.main.humidity}%`}</p>
                     </div>
                 </div>
                 </div>
