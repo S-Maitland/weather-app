@@ -4,17 +4,17 @@ import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'r
 export function TempForecastGraph({ forecast }) {
 
   console.log(forecast);
+
   return (
     <>
-      <LineChart width={730} height={250} data={forecast}
+      <LineChart width={900} height={250} data={forecast}
                  margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='timestamp' />
-        <YAxis dataKey='temp'/>
+        <CartesianGrid stroke="black" strokeDasharray='1 1' />
+        <XAxis dataKey='date' />
+        <YAxis />
         <Tooltip />
         <Legend />
-        <Line type='monotone' dataKey='TEMP' stroke='red' />
-        <Line type='monotone' dataKey='TIMESTAMP' stroke='blue' />
+        <Line type='monotone' dataKey='temp' stroke='red' />
       </LineChart>
     </>
   );
