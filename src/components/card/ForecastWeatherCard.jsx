@@ -2,17 +2,15 @@ import '../../scss/components/_forecastWeatherCard.scss';
 import { TempForecastGraph } from '../graphs/TempForecastGraph';
 
 const ForecastWeatherCard = ({ weatherForecast }) => {
-  console.log(weatherForecast);
 
-  let temperatureForecastData = weatherForecast.list.map((forecastSegment) => {
-    let forecastDate = forecastSegment.dt_txt.slice(0,10);
-    let forecastTime = forecastSegment.dt_txt.slice(12,19);
-    return ({
+  let temperatureForecastData = weatherForecast.list.map((forecastSegment) => (
+    {
       temp: forecastSegment.main.temp,
-      date: forecastDate,
-      time: forecastTime
-    });
-  });
+      temp_max: forecastSegment.main.temp_max,
+      temp_min: forecastSegment.main.temp_min,
+      date: forecastSegment.dt_txt.slice(0, 10),
+      time: forecastSegment.dt_txt.slice(11, 19)
+    }));
 
   return (
     <div className='cardContainer'>
