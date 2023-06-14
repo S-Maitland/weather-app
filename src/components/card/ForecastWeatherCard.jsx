@@ -1,20 +1,26 @@
 import '../../scss/components/_forecastWeatherCard.scss';
-import { TempForecastGraph } from '../graphs/TempForecastGraph';
+import TempForecastGraph from '../graphs/TempForecastGraph';
 
 const ForecastWeatherCard = ({ weatherForecast }) => {
+  let uniqueDates = weatherForecast.list.map((forecastSegment) => {
+    return forecastSegment.dt_txt.slice(0, 10);
+  });
 
-  let temperatureForecastData = weatherForecast.list.map((forecastSegment) => (
+  uniqueDates = [...new Set(uniqueDates)]
+
+  const forecastData = weatherForecast.list.map((forecastSegment) => (
     {
-      temp: forecastSegment.main.temp,
-      temp_max: forecastSegment.main.temp_max,
-      temp_min: forecastSegment.main.temp_min,
-      date: forecastSegment.dt_txt.slice(0, 10),
-      time: forecastSegment.dt_txt.slice(11, 19)
-    }));
+      'temp': forecastSegment.main.temp,
+      'temp_max': forecastSegment.main.temp_max,
+      'temp_min': forecastSegment.main.temp_min,
+      'date': forecastSegment.dt_txt.slice(0, 10),
+      'time': forecastSegment.dt_txt.slice(11, 19)
+    }
+  ));
 
   return (
     <div className='cardContainer'>
-      <TempForecastGraph forecast={temperatureForecastData} />
+      <TempForecastGraph forecastData={forecastData} forecastedDates={uniqueDates} />
     </div>
   );
 };
