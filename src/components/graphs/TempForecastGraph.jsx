@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 
 const TempForecastGraph = (props) => {
@@ -11,8 +11,20 @@ const TempForecastGraph = (props) => {
     );
   });
 
-  //TODO - On dropdown selection change, trigger setDateData to map
-  // over forecastData to extract data only for that date.
+  useEffect(() => {
+
+    // TODO - can we refactor this to useReducer hook instead?
+    const filteredData = (date) => {
+      setDateData(
+        props.forecastData.filter(forecastSegment => {
+          return forecastSegment.date === date;
+        })
+      );
+    };
+
+    filteredData(date);
+
+  }, [props.forecastData, date]);
 
   return (
     <>
@@ -30,7 +42,7 @@ const TempForecastGraph = (props) => {
                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid stroke='black' strokeDasharray='3 3' />
           <XAxis dataKey='time' />
-          <YAxis dataKey='temp' />
+          <YAxis />
           <Tooltip />
           <Legend />
           <Line type='monotone' dataKey='temp' stroke='black' />
