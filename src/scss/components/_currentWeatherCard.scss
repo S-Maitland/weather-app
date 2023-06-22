@@ -1,92 +1,105 @@
-@use '../abstract/colors' as colors;
+  @use '../abstract/colors' as colors;
 
-.cardContainer {
-  align-items: center;
-  box-shadow: 0.5rem 2rem 2.5rem #191D24;
-  background-color: colors.$site-secondary-color;
-  border-radius: 2.5rem;
-  color: colors.$site-main-text-color;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 75%;
+  .cardContainer {
+    align-items: center;
+    box-shadow: 0.5rem 2rem 2.5rem #191D24;
+    background-color: colors.$site-secondary-color;
+    border-radius: 2.5rem;
+    color: colors.$site-main-text-color;
+    justify-content: center;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 75%;
+    display: block;
 
-  .iconWrap {
+    .currentWeatherGroup{
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    max-width: 75%;
+    margin: auto;
+    }
+    .iconWrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-weight: bolder;
+
+      img {
+        animation: slidein;
+        animation-duration: 3s;
+      }
+    }
+  }
+
+  .weatherInfoContainer {
+    font-weight: bolder;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-    font-weight: bolder;
+    // margin: 1rem auto;
 
-    img {
-      animation: slidein;
-      animation-duration: 3s;
-    }
   }
-}
 
-.weatherInfoContainer {
-  font-weight: bolder;
-  display: flex;
-  flex-direction: column;
-  // margin: 1rem auto;
-
-}
-
-.dataRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0.4rem;
-  width: 100%;
-
-  & p {
-    color: black;
-    margin: 0;
-  }
-}
-
-.dataValue {
-  padding-left: 4rem;
-}
-
-img {
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-}
-
-
-@media (min-width: 700px) {
-  .cardContainer {
-    box-shadow: 1rem 1rem 1.5rem #191D24;
-    border-radius: 5rem;
+  .dataRow {
+    display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    max-width: 75%;
+    justify-content: space-between;
+    padding: 0.4rem;
+    width: 100%;
 
-    .iconWrap {
-      margin-bottom: 0;
+    & p {
+      color: black;
+      margin: 0;
     }
   }
-}
 
-@keyframes slidein {
-  0% {
-    opacity: 0;
-    transform: translatey(-100%);
+  .cardTitle{
+    text-align: center;
+    font-size: 2em;
   }
 
-  50% {
-    opacity: 0;
-    transform: translatey(-50%);
+  .dataValue {
+    padding-left: 4rem;
   }
 
-  100% {
-    opacity: 100%;
-    transform: translatey(0%);
+  img {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
   }
-}
+
+
+  @media (min-width: 700px) {
+    .cardContainer {
+      box-shadow: 1rem 1rem 1.5rem #191D24;
+      border-radius: 5rem;
+      flex-direction: row;
+      justify-content: space-around;
+      max-width: 75%;
+
+      .iconWrap {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @keyframes slidein {
+    0% {
+      opacity: 0;
+      transform: translatey(-100%);
+    }
+
+    50% {
+      opacity: 0;
+      transform: translatey(-50%);
+    }
+
+    100% {
+      opacity: 100%;
+      transform: translatey(0%);
+    }
+  }
