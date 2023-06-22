@@ -1,5 +1,9 @@
 @use '../abstract/colors' as colors;
+@use '../base/typography' as fonts;
+.header{
+    h1 {
+        color : colors.$site-main-text-color;
+        font-family: fonts.$lobster;
+    }
 
-h1 {
-    color : colors.$site-main-text-color;
 }

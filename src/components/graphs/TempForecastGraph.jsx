@@ -45,7 +45,7 @@ const TempForecastGraph = (props) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type='monotone' dataKey='temp' stroke='black' />
+          <Line type='monotone' dataKey='temp' stroke='red' />
         </LineChart>
       </div>
     </>
