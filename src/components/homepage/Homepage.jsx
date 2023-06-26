@@ -4,22 +4,12 @@ import { CitiesForm } from './CitiesForm';
 import CurrentWeatherCard from '../card/CurrentWeatherCard';
 import ForecastWeatherCard from '../card/ForecastWeatherCard';
 import { getWeather, getWeatherForecast } from '../API/GetWeather';
-import { getLocation } from '../Location/LocationComponent';
+import axios from 'axios';
 
 const Homepage = () => {
   const [weatherNow, setWeatherNow] = useState();
   const [weatherForecast, setWeatherForecast] = useState();
   const [city, setCity] = useState(null);
-
-  useEffect(() => {
-    const fetchUserCity = async () => {
-      const locationCity = await getLocation();
-      setCity(locationCity);
-    };
-
-    fetchUserCity();
-  }, []);
-
 
   useEffect(() => {
     if (city) {
@@ -34,10 +24,39 @@ const Homepage = () => {
     }
   }, [city]);
 
+  const fetchUserCity = async () => {
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const { latitude, longitude } = position.coords;
+
+        const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+        const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
+
+        await axios
+          .get(geocodingUrl)
+          .then((response) => {
+            const addressComponents = response.data.results[0].address_components;
+            const cityComponent = addressComponents.find((component) =>
+              component.types.includes('postal_town')
+            );
+
+            if (cityComponent) {
+              setCity(cityComponent.long_name);
+            }
+          })
+          .catch((error) => {
+            console.error('Error fetching city: ', error);
+          });
+      }, (error) => {
+        console.error('Error getting location:', error);
+      });
+  };
+
   return (
     <>
       <div className='citySelector'>
         <CitiesForm setCity={setCity} />
+        <button onClick={fetchUserCity}>Find Me!</button>
       </div>
       <div className='cardWrap'>
         {weatherNow ? <CurrentWeatherCard currentWeather={weatherNow} /> : null}
