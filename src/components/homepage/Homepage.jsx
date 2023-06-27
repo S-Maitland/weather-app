@@ -9,7 +9,7 @@ import axios from 'axios';
 const Homepage = () => {
   const [weatherNow, setWeatherNow] = useState();
   const [weatherForecast, setWeatherForecast] = useState();
-  const [city, setCity] = useState(null);
+  const [city, setCity] = useState("London");
 
   useEffect(() => {
     if (city) {
@@ -41,6 +41,7 @@ const Homepage = () => {
             );
 
             if (cityComponent) {
+              console.log(cityComponent.long_name);
               setCity(cityComponent.long_name);
             }
           })
