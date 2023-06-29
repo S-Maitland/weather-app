@@ -24,6 +24,7 @@ const Homepage = () => {
     }
   }, [city]);
 
+//TODO - refactor fetch user city call into Location_Services JS file
   const fetchUserCity = async () => {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
@@ -36,12 +37,12 @@ const Homepage = () => {
           .get(geocodingUrl)
           .then((response) => {
             const addressComponents = response.data.results[0].address_components;
+              console.log(addressComponents);
             const cityComponent = addressComponents.find((component) =>
               component.types.includes('postal_town')
             );
 
             if (cityComponent) {
-              console.log(cityComponent.long_name);
               setCity(cityComponent.long_name);
             }
           })
@@ -56,11 +57,11 @@ const Homepage = () => {
   return (
     <>
       <div className='citySelector'>
-        <CitiesForm setCity={setCity} />
+        <CitiesForm setCity={setCity} currentCity={city} />
         <button onClick={fetchUserCity}>Find Me!</button>
       </div>
       <div className='cardWrap'>
-        {weatherNow ? <CurrentWeatherCard currentWeather={weatherNow} /> : null}
+        {weatherNow ? <CurrentWeatherCard currentCity = {city} currentWeather={weatherNow} /> : null}
       </div>
       <div className='cardWrap'>
         {weatherForecast ? <ForecastWeatherCard weatherForecast={weatherForecast} /> : null}
