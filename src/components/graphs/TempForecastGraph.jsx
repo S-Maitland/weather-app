@@ -29,7 +29,7 @@ const TempForecastGraph = (props) => {
   return (
     <>
       <form>
-        <select defaultValue='DEFAULT' onChange={(e) => {
+        <select id="dateSelect" defaultValue='DEFAULT' onChange={(e) => {
           setDate(e.target.value);
         }}>
           <option value='DEFAULT' disabled>{'Select a date...'}</option>
