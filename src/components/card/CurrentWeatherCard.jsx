@@ -1,12 +1,17 @@
 import '../../scss/components/_currentWeatherCard.scss';
 
-const CurrentWeatherCard = ({ currentWeather }) => {
+const CurrentWeatherCard = ({currentCity, currentWeather }) => {
 
     return (
         <div className="cardContainer">
+            <div className="cardTitle">
+                Current Weather
+            </div>
+            <div className="currentWeatherGroup">
             <div className="iconWrap">
                 <img src={`http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`} alt="weatherIcon" />
                 {currentWeather.weather[0].description}
+                <p>{currentCity}</p>
             </div>
 
             <div className="weatherInfoContainer">
@@ -60,6 +65,7 @@ const CurrentWeatherCard = ({ currentWeather }) => {
                     <div className='dataValue'>
                         <p>{`${currentWeather.main.humidity}%`}</p>
                     </div>
+                </div>
                 </div>
                 </div>
         </div>

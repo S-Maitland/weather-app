@@ -29,7 +29,7 @@ const TempForecastGraph = (props) => {
   return (
     <>
       <form>
-        <select defaultValue='DEFAULT' onChange={(e) => {
+        <select id="dateSelect" defaultValue='DEFAULT' onChange={(e) => {
           setDate(e.target.value);
         }}>
           <option value='DEFAULT' disabled>{'Select a date...'}</option>
@@ -45,7 +45,7 @@ const TempForecastGraph = (props) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type='monotone' dataKey='temp' stroke='black' />
+          <Line type='monotone' dataKey='temp' stroke='red' />
         </LineChart>
       </div>
     </>

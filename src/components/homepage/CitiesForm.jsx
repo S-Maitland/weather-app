@@ -1,23 +1,29 @@
-import cities from '../../cities.json'
+import cities from '../../cities.json';
+import React from 'react';
 
 const cityData = cities.cities.sort();
 
-export const CitiesForm = ({setCity}) => {
+export const CitiesForm = ({ currentCity, setCity }) => {
 
-  const citiesList = cityData.map((city,index) => {
+  const citiesList = cityData.map((city, index) => {
+    const selected = city === currentCity
     return (
-      <option key={index} value={city}>{city}</option>
-    )
-  })
+      <option key={index} value={city} selected={selected}>{city}</option>
+    );
+  });
 
   return (
     <>
       <form>
-        <select defaultValue='DEFAULT' onChange={(e) => { setCity(e.target.value) }}>
-          <option value="DEFAULT" disabled>Select A City...</option>
+        <select id='citySelection'
+                defaultValue='DEFAULT'
+                onChange={(e) => {
+                  setCity(e.target.value);
+                }}>
+          <option value='DEFAULT' disabled>Select A City...</option>
           {citiesList}
         </select>
       </form>
     </>
-  )
-}
+  );
+};
