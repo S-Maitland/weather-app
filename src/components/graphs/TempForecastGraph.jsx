@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 
-const TempForecastGraph = (props) => {
-  const [date, setDate] = useState(props.forecastedDates[0]);
+const TempForecastGraph = ({ forecastData, forecastedDates }) => {
+  const [date, setDate] = useState(forecastedDates[0]);
   const [dateData, setDateData] = useState();
 
-  const uniqueDateList = props.forecastedDates.map((date, index) => {
+  const uniqueDateList = forecastedDates.map((date, index) => {
     return (
-      <option key={index} value={date}>{date}</option>
+      <option key={index} selected={true} value={date}>{date}</option>
     );
   });
 
   useEffect(() => {
 
-    // TODO - can we refactor this to useReducer hook instead?
     const filteredData = (date) => {
       setDateData(
-        props.forecastData.filter(forecastSegment => {
+        forecastData.filter(forecastSegment => {
           return forecastSegment.date === date;
         })
       );
@@ -24,15 +23,17 @@ const TempForecastGraph = (props) => {
 
     filteredData(date);
 
-  }, [props.forecastData, date]);
+  }, [forecastData, date]);
 
   return (
     <>
       <form>
-        <select id="dateSelect" defaultValue='DEFAULT' onChange={(e) => {
-          setDate(e.target.value);
-        }}>
-          <option value='DEFAULT' disabled>{'Select a date...'}</option>
+        <select id='dateSelection'
+                defaultValue={date[0]}
+                onChange={(e) => {
+                  setDate(e.target.value);
+                }}>
+          <option value='DEFAULT' disabled>Select a date...</option>
           {uniqueDateList}
         </select>
       </form>
