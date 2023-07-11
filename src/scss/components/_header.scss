@@ -1,10 +1,10 @@
 @use '../abstract/colors' as colors;
 @use '../base/typography' as fonts;
+
 .header{
     h1 {
-        color : colors.$site-main-text-color;
+        color : colors.$site-secondary-text-color;
         font-family: fonts.$lobster;
         font-size: xxx-large;
     }
-
 }

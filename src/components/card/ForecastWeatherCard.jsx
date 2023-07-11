@@ -19,7 +19,7 @@ const ForecastWeatherCard = ({ weatherForecast }) => {
   ));
 
   return (
-    <div className='cardContainer'>
+    <div className='forecastCardContainer'>
       <TempForecastGraph forecastData={forecastData} forecastedDates={uniqueDates} />
     </div>
   );

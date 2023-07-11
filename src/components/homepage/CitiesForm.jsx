@@ -6,7 +6,7 @@ const cityData = cities.cities.sort();
 export const CitiesForm = ({ currentCity, setCity }) => {
 
   const citiesList = cityData.map((city, index) => {
-    const selected = city === currentCity
+    const selected = city === currentCity;
     return (
       <option key={index} value={city} selected={selected}>{city}</option>
     );
