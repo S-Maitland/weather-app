@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 const TempForecastGraph = ({ forecastData, forecastedDates }) => {
   const [date, setDate] = useState(forecastedDates[0]);
@@ -27,7 +27,7 @@ const TempForecastGraph = ({ forecastData, forecastedDates }) => {
 
   return (
     <>
-      <form>
+      <form className='dateSelector'>
         <select id='dateSelection'
                 defaultValue={date[0]}
                 onChange={(e) => {
@@ -38,8 +38,9 @@ const TempForecastGraph = ({ forecastData, forecastedDates }) => {
         </select>
       </form>
 
-      <div className='forecastWeatherCard'>
-        <LineChart width={900} height={250} data={dateData}
+      <div className='forecastGraph'>
+        <ResponsiveContainer width={'100%'} height={300}>
+        <LineChart data={dateData}
                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid stroke='black' strokeDasharray='3 3' />
           <XAxis dataKey='time' />
@@ -48,6 +49,7 @@ const TempForecastGraph = ({ forecastData, forecastedDates }) => {
           <Legend />
           <Line type='monotone' dataKey='temp' stroke='red' />
         </LineChart>
+        </ResponsiveContainer>
       </div>
     </>
   );
