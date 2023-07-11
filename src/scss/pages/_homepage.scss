@@ -1,13 +1,13 @@
 @use '../abstract/colors' as colors;
 
 body {
-    background-color: colors.$site-background-color;
+    background-color: colors.$site-main-color;
 }
+
 .cardWrap {
     width:100%;
     display: inline-block;
     margin-top: 2rem;
-
 }
 
 .citySelector {
@@ -20,5 +20,5 @@ body {
 
 .header {
     justify-content: center;
-    display:flex; 
+    display:flex;
 }
