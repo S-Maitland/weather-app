@@ -1,0 +1,22 @@
+@use '../abstract/colors' as colors;
+
+.forecastCardContainer {
+  box-shadow: 0.5rem 2rem 2.5rem #191D24;
+  background-color: colors.$site-secondary-color;
+  border-radius: 2.5rem;
+  color: colors.$site-main-text-color;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75%;
+}
+
+.dateSelector {
+  padding-bottom: 1rem;
+}
+
+#dateSelection {
+  font-size: large;
+  display: block;
+  margin: 0 auto;
+}

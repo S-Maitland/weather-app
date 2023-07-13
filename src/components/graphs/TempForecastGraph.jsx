@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
-const TempForecastGraph = (props) => {
-  const [date, setDate] = useState(props.forecastedDates[0]);
+const TempForecastGraph = ({ forecastData, forecastedDates }) => {
+  const [date, setDate] = useState(forecastedDates[0]);
   const [dateData, setDateData] = useState();
 
-  const uniqueDateList = props.forecastedDates.map((date, index) => {
+  const uniqueDateList = forecastedDates.map((date, index) => {
     return (
-      <option key={index} value={date}>{date}</option>
+      <option key={index} selected={true} value={date}>{date}</option>
     );
   });
 
   useEffect(() => {
 
-    // TODO - can we refactor this to useReducer hook instead?
     const filteredData = (date) => {
       setDateData(
-        props.forecastData.filter(forecastSegment => {
+        forecastData.filter(forecastSegment => {
           return forecastSegment.date === date;
         })
       );
@@ -24,21 +23,24 @@ const TempForecastGraph = (props) => {
 
     filteredData(date);
 
-  }, [props.forecastData, date]);
+  }, [forecastData, date]);
 
   return (
     <>
-      <form>
-        <select id="dateSelect" defaultValue='DEFAULT' onChange={(e) => {
-          setDate(e.target.value);
-        }}>
-          <option value='DEFAULT' disabled>{'Select a date...'}</option>
+      <form className='dateSelector'>
+        <select id='dateSelection'
+                defaultValue={date[0]}
+                onChange={(e) => {
+                  setDate(e.target.value);
+                }}>
+          <option value='DEFAULT' disabled>Select a date...</option>
           {uniqueDateList}
         </select>
       </form>
 
-      <div className='forecastWeatherCard'>
-        <LineChart width={900} height={250} data={dateData}
+      <div className='forecastGraph'>
+        <ResponsiveContainer width={'100%'} height={300}>
+        <LineChart data={dateData}
                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid stroke='black' strokeDasharray='3 3' />
           <XAxis dataKey='time' />
@@ -47,6 +49,7 @@ const TempForecastGraph = (props) => {
           <Legend />
           <Line type='monotone' dataKey='temp' stroke='red' />
         </LineChart>
+        </ResponsiveContainer>
       </div>
     </>
   );

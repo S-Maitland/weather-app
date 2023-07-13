@@ -1,105 +1,37 @@
-  @use '../abstract/colors' as colors;
+@use '../abstract/colors' as colors;
 
-  .cardContainer {
-    align-items: center;
-    box-shadow: 0.5rem 2rem 2.5rem #191D24;
-    background-color: colors.$site-secondary-color;
-    border-radius: 2.5rem;
-    color: colors.$site-main-text-color;
-    justify-content: center;
-    padding: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 75%;
-    display: block;
+.currentWeatherContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .currentWeatherGroup{
-    display:flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    padding: 1rem;
-    max-width: 75%;
-    margin: auto;
-    }
-    .iconWrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 1rem;
-      font-weight: bolder;
+.currentWeatherGauge {
+  background-color: colors.$site-secondary-color;
+  border: 0.5rem solid transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(grey, white), linear-gradient(colors.$gauge-secondary-border, colors.$gauge-main-border);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  height: 15rem;
+  width: 15rem;
+}
 
-      img {
-        animation: slidein;
-        animation-duration: 3s;
-      }
-    }
-  }
-
-  .weatherInfoContainer {
-    font-weight: bolder;
-    display: flex;
-    flex-direction: column;
-    // margin: 1rem auto;
-
-  }
-
-  .dataRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0.4rem;
-    width: 100%;
-
-    & p {
-      color: black;
-      margin: 0;
-    }
-  }
-
-  .cardTitle{
-    text-align: center;
-    font-size: 2em;
-  }
-
-  .dataValue {
-    padding-left: 4rem;
-  }
+.iconWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  font-weight: bold;
+  color: colors.$site-main-text-color;
+  text-transform: capitalize;
 
   img {
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-  }
+    animation: fadeIn ease 3s;
 
-
-  @media (min-width: 700px) {
-    .cardContainer {
-      box-shadow: 1rem 1rem 1.5rem #191D24;
-      border-radius: 5rem;
-      flex-direction: row;
-      justify-content: space-around;
-      max-width: 75%;
-
-      .iconWrap {
-        margin-bottom: 0;
-      }
+    @keyframes fadeIn {
+      0% {opacity:0;}
+      100% {opacity:1;}
     }
   }
-
-  @keyframes slidein {
-    0% {
-      opacity: 0;
-      transform: translatey(-100%);
-    }
-
-    50% {
-      opacity: 0;
-      transform: translatey(-50%);
-    }
-
-    100% {
-      opacity: 100%;
-      transform: translatey(0%);
-    }
-  }
+}
