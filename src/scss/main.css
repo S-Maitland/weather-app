@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+.header h1 {
+  color: #f2c75c;
+  font-family: "Lobster", serif;
+  font-size: xxx-large;
+}
+
+.currentWeatherContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.currentWeatherGauge {
+  background-color: #c8d8e4;
+  border: 0.5rem solid transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(grey, white), linear-gradient(#f2c75c, #a020f0);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  height: 15rem;
+  width: 15rem;
+}
+
+.iconWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  text-transform: capitalize;
+}
+.iconWrap img {
+  animation: fadeIn ease 3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.forecastCardContainer {
+  box-shadow: 0.5rem 2rem 2.5rem #191D24;
+  background-color: #c8d8e4;
+  border-radius: 2.5rem;
+  color: #000000;
+  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75%;
+}
+
+.dateSelector {
+  padding-bottom: 1rem;
+}
+
+#dateSelection {
+  font-size: large;
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #1b365d;
+}
+
+.cardWrap {
+  width: 100%;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.citySelector {
+  justify-content: center;
+  display: flex;
+}
+.citySelector input, .citySelector select, .citySelector textarea {
+  font-size: 125%;
+}
+
+.header {
+  justify-content: center;
+  display: flex;
+}
+
+/*# sourceMappingURL=main.css.map */
