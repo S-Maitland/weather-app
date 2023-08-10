@@ -20,3 +20,10 @@
   display: block;
   margin: 0 auto;
 }
+
+@media screen and (max-width:400px){
+  .recharts-surface{
+    width:90%;
+    height:100%;
+  }
+}
